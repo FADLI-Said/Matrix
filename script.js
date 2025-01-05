@@ -9,9 +9,9 @@ fetch("credits.json")
             .then((matrix) => {
                 let heure = Math.floor(matrix.runtime / 60)
                 let minute = matrix.runtime % 60
-
+                // .filter = if et .map = chercher un objet dans un groupe d'objet
                 let directors = credit.crew.filter(member => member.job === "Director").map(member => member.name);
-
+                // .join = les avoir tous a la suite avec une virgule entre 2
                 document.getElementById("affiche").innerHTML = `<div class="row m-0 content">
             <img src="https://image.tmdb.org/t/p/w500/pEoqbqtLc4CcwDUDqxmEDSWpWTZ.jpg" alt="sonic"
                 class="col-3 p-0 m-3">
@@ -50,7 +50,7 @@ fetch("credits.json")
         }
     })
 
-
+    // Permet de scroller une barre horizonatl avec la souris
     document.getElementById("scroll").addEventListener('wheel', (e) => {
         e.preventDefault();
         e.currentTarget.scrollLeft += e.deltaY;
