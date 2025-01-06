@@ -13,7 +13,7 @@ fetch("credits.json")
                 let directors = credit.crew.filter(member => member.job === "Director").map(member => member.name);
                 // .join = les avoir tous a la suite avec une virgule entre 2
                 document.getElementById("affiche").innerHTML = `<div class="row m-0 content">
-            <img src="https://image.tmdb.org/t/p/w500/pEoqbqtLc4CcwDUDqxmEDSWpWTZ.jpg" alt="sonic"
+            <img src="https://image.tmdb.org/t/p/w500/pEoqbqtLc4CcwDUDqxmEDSWpWTZ.jpg" alt="${matrix.original_title}"
                 class="col-3 p-0 m-3">
             <div class="col-8">
                 <h1 class="fs-2 p-0 m-3">${matrix.original_title}</h1>
@@ -41,7 +41,7 @@ fetch("credits.json")
             document.getElementById("scroll").innerHTML += `
             <div class="card p-0" style="width: 10rem;">
                 <img src="https://image.tmdb.org/t/p/w500${credit.cast[acteur].profile_path}" class="card-img-top"
-                    alt="Image de l'acteur">
+                    alt="Image de ${credit.cast[acteur].name}">
                 <div class="card-body">
                     <h5 class="card-title">${credit.cast[acteur].name}</h5>
                     <p class="card-text">${credit.cast[acteur].character}</p>
